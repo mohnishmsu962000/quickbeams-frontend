@@ -46,7 +46,7 @@ export default function SignInPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center text-blue-600 text-2xl font-medium">
-                <img src={'./logo.png'} className='w-10'/>
+                <img src={'./Logo.png'} className='w-10'/>
               Quickbeams
             </div>
           </div>
