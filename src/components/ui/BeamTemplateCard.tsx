@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import Button from './Button';
 import { FaLinkedin } from 'react-icons/fa';
+import Badge from './Badge';
 
 interface BeamTemplateCardProps {
   title: string;
@@ -30,15 +31,15 @@ export default function BeamTemplateCard({
   };
 
   return (
-    <div className={cn("bg-white rounded-[40px] border border-gray-200 shadow-sm p-6 flex flex-col justify-between h-full", className)}>
+    <div className={cn("bg-white rounded-[40px] border border-gray-200 shadow-sm p-10 flex flex-col justify-between h-full", className)}>
       {/* Header with icon and Beam button */}
       <div className="flex justify-between items-start mb-4">
         <div className="w-8 h-8 flex items-center justify-center">
           {getPlatformIcon()}
         </div>
-        <Button variant="outline" size="sm" className="text-gray-600 bg-gray-100">
+        <Badge variant="default" size="sm">
           Beam
-        </Button>
+        </Badge>
       </div>
 
       {/* Title */}
