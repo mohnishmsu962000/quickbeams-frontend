@@ -9,7 +9,7 @@ import Modal from '@/components/ui/Modal';
 import Breadcrumb from '@/components/ui/Breadcrumb';
 import { FaCog, FaUsers, FaCreditCard } from 'react-icons/fa';
 
-const currentUserRole: 'admin' | 'superadmin' = 'admin';
+const currentUserRole: 'admin' | 'superadmin' = 'superadmin';
 
 const settingsTabs = [
   { id: 'general', label: 'General', icon: <FaCog className="w-4 h-4 mr-2" />, href: '/dashboard/settings/general' },
