@@ -29,6 +29,15 @@ const navigation = [
 export default function Sidebar() {
   const pathname = usePathname();
 
+  //Freshcht Widget
+
+  const openChat = () => {
+    if (typeof window !== "undefined" && window.fcWidget) {
+      window.fcWidget.open();   // Opens the Freshchat widget
+      window.fcWidget.show();   // Make sure it’s visible
+    }
+  };
+
   return (
     <div className="flex flex-col w-64 mr-12 bg-white border-r border-gray-200 h-screen justify-between p-6 px-9">
       <div>
@@ -109,10 +118,10 @@ export default function Sidebar() {
             <FaGift className="w-4 h-4 mr-3" />
             What's New
           </Link>
-          <Link href="/dashboard/support" className="flex items-center px-4 py-2 text-[16px] font-normal text-gray-800 hover:bg-gray-100 rounded-[20px]">
+          <button onClick={openChat} className="flex items-center px-4 py-2 text-[16px] font-normal text-gray-800 hover:bg-gray-100 rounded-[20px]">
             <FaQuestionCircle className="w-4 h-4 mr-3" />
             Support
-          </Link>
+          </button>
         </div>
       </div>
     </div>
