@@ -14,13 +14,15 @@ export default function AppLayout({ children }: AppLayoutProps) {
         <Sidebar />
         <div className="flex-1 flex flex-col">
           <Header />
-          <main className="flex-1 overflow-y-auto">
+          <main className="flex-1 overflow-y-auto relative">
+            {/* Gradient overlay for smooth scroll effect */}
+            <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-gray-100 to-transparent pointer-events-none z-10"></div>
             {children}
           </main>
         </div>
         <Script
           src="//in.fw-cdn.com/32542845/1407985.js"
-          strategy="afterInteractive" // ensures it loads after page is ready
+          strategy="afterInteractive"
         />
       </div>
     </DesktopOnly>
