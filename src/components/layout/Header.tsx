@@ -159,7 +159,8 @@ export default function Header() {
         </div>
 
         {/* New Beam button */}
-        <Button variant="primary" size="md" className="px-8 py-3 rounded-[20px] min-w-[150px]">
+        <Button variant="primary" size="md" className="px-8 py-3 rounded-[20px] min-w-[150px]"
+        onClick={() => router.push('/dashboard/discover')}>
           <FiPlus className='text-xl mr-3' />
           New Beam
         </Button>

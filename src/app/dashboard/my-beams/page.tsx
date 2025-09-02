@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import BeamCard from '@/components/ui/BeamCard';
 import Button from '@/components/ui/Button';
+import { useRouter } from 'next/navigation';
 
 export default function MyBeamsPage() {
   const [filter, setFilter] = useState('all');
@@ -26,6 +27,9 @@ export default function MyBeamsPage() {
       status: 'error' as const
     }
   ]);
+  const router = useRouter();
+
+  
 
   const handleDuplicate = (id: string) => {
     const beamToDuplicate = beams.find(beam => beam.id === id);
@@ -64,6 +68,17 @@ export default function MyBeamsPage() {
 
   const handleEdit = (id: string) => {
     console.log('Edit beam:', id);
+    
+    try {
+      const selectedBeam = beams.find(beam => beam.id === id);
+      if (selectedBeam) {
+        router.push('/beam-setup/linkedin-auto-connect/connected-accounts');
+      }
+    } catch (error) {
+      console.error('Router error:', error);
+      // Fallback: use window.location if router fails
+      window.location.href = '/beam-setup/linkedin-auto-connect/connected-accounts';
+    }
   };
 
   const handleShowUpdates = (id: string) => {

@@ -3,15 +3,18 @@
 import { useState } from 'react';
 import Button from '@/components/ui/Button';
 import Breadcrumb from '@/components/ui/Breadcrumb';
+import Link from 'next/link';
 
 export default function LinkedInAutoConnectPage() {
   const [activeTab, setActiveTab] = useState('quick-look');
+
 
   const breadcrumbItems = [
     { label: 'Dashboard', href: '/dashboard' },
     { label: 'Discover', href: '/dashboard/discover' },
     { label: 'LinkedIn Auto-connect' }
   ];
+
 
   return (
     <div className="py-6 space-y-6 pr-12">
@@ -23,9 +26,11 @@ export default function LinkedInAutoConnectPage() {
         <div className="flex justify-between items-center w-full">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl font-medium mb-6">LinkedIn Auto-connect</h1>
-            <Button variant="primary" size="lg" className="bg-white text-blue-600 hover:bg-gray-100 w-fit">
-              Initiate
-            </Button>
+            <Link href="/beam-setup/linkedin-auto-connect/connected-accounts">
+              <Button variant="primary" size="lg" className="bg-white text-blue-600 hover:bg-gray-100 w-fit">
+                Initiate
+              </Button>
+            </Link>
           </div>
           
           <div className="bg-white/20 rounded-[20px] p-4 w-[600px] h-[350px]">
