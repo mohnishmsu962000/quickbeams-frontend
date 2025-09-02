@@ -4,10 +4,16 @@ import { useState } from 'react';
 import Button from '@/components/ui/Button';
 import { FaLinkedin, FaCheck, FaTimes } from 'react-icons/fa';
 
+interface ConnectedAccount {
+  name: string;
+  email: string;
+  profileImage?: string;
+}
+
 export default function ConnectedAccountsPage() {
   const [isConnected, setIsConnected] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
-  const [connectedAccount, setConnectedAccount] = useState(null);
+  const [connectedAccount, setConnectedAccount] = useState<ConnectedAccount | null>(null);
 
   const handleConnectLinkedIn = async () => {
     setIsConnecting(true);
@@ -16,8 +22,7 @@ export default function ConnectedAccountsPage() {
       setIsConnected(true);
       setConnectedAccount({
         name: 'John Doe',
-        email: 'john.doe@company.com',
-        profileImage: null
+        email: 'john.doe@company.com'
       });
       setIsConnecting(false);
     }, 2000);
@@ -78,21 +83,23 @@ export default function ConnectedAccountsPage() {
       </div>
 
       {/* Connected Account Card */}
-      <div className="bg-gray-50 rounded-2xl p-6 max-w-sm mx-auto">
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-            <FaLinkedin className="w-6 h-6 text-blue-600" />
-          </div>
-          <div className="text-left flex-1">
-            <h3 className="font-semibold text-gray-900">{connectedAccount?.name}</h3>
-            <p className="text-sm text-gray-600">{connectedAccount?.email}</p>
-          </div>
-          <div className="flex items-center space-x-1">
-            <FaCheck className="w-4 h-4 text-green-500" />
-            <span className="text-sm text-green-600 font-medium">Active</span>
+      {connectedAccount && (
+        <div className="bg-gray-50 rounded-2xl p-6 max-w-sm mx-auto">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <FaLinkedin className="w-6 h-6 text-blue-600" />
+            </div>
+            <div className="text-left flex-1">
+              <h3 className="font-semibold text-gray-900">{connectedAccount.name}</h3>
+              <p className="text-sm text-gray-600">{connectedAccount.email}</p>
+            </div>
+            <div className="flex items-center space-x-1">
+              <FaCheck className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-green-600 font-medium">Active</span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Action Buttons */}
       <div className="flex justify-center space-x-4">
