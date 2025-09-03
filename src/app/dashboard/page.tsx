@@ -19,7 +19,7 @@ export default function DashboardPage() {
           <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
             <FiArrowUp className="text-2xl text-blue-600 font-bold" style={{ strokeWidth: 3 }}/>
           </div>
-          <h1 className="text-3xl font-bold text-black">340 Requests Sent</h1>
+          <h1 className="text-3xl font-medium text-black">340 Requests Sent</h1>
         </div>
         <div className="flex items-center space-x-4">
           <Badge variant="secondary">Last 7 days</Badge>
@@ -50,7 +50,7 @@ export default function DashboardPage() {
 
       {/* Popular Beams Section */}
       <div>
-        <h2 className="text-2xl font-bold text-black mb-6">Most Popular Beams</h2>
+        <h2 className="text-2xl font-medium text-black mb-6">Most Popular Beams</h2>
         <div className="grid grid-cols-2 gap-6">
           <TemplateCard
             icon={<FaPlay className="w-6 h-6 text-blue-600" />}

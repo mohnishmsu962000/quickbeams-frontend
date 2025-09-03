@@ -40,7 +40,7 @@ export default function LinkedInAutoConnectLayout({ children }: LinkedInAutoConn
                       <div className="flex items-center space-x-4">
                         <div className={cn(
                           "w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium",
-                          isActive ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-600"
+                          isActive ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-600"
                         )}>
                           {index + 1}
                         </div>

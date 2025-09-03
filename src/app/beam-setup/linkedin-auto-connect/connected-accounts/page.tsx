@@ -42,7 +42,7 @@ export default function ConnectedAccountsPage() {
         </div>
         
         <div>
-          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Connect Your LinkedIn Account</h1>
+          <h1 className="text-2xl font-medium text-gray-900 mb-2">Connect Your LinkedIn Account</h1>
           <p className="text-gray-600">Connect your LinkedIn account to start automating your outreach</p>
         </div>
 
@@ -51,14 +51,14 @@ export default function ConnectedAccountsPage() {
           size="lg"
           onClick={handleConnectLinkedIn}
           isLoading={isConnecting}
-          className="px-8 py-4 rounded-2xl text-lg font-medium"
+          className="px-8 py-4 rounded-2xl text-lg font-normal"
         >
           <FaLinkedin className="w-5 h-5 mr-3" />
           {isConnecting ? 'Connecting...' : 'Connect to LinkedIn'}
         </Button>
 
         <div className="mt-8 p-4 bg-blue-50 rounded-2xl">
-          <h3 className="font-semibold text-blue-900 mb-2">Secure & Safe</h3>
+          <h3 className="font-medmium text-blue-700 mb-2">Secure & Safe</h3>
           <p className="text-sm text-blue-700">
             We use OAuth 2.0 for secure authentication. We never store your password and you can revoke access anytime.
           </p>
@@ -70,7 +70,7 @@ export default function ConnectedAccountsPage() {
   // Show connected state
   return (
     <div className="text-center space-y-6">
-      <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto relative">
+      <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto relative">
         <FaLinkedin className="w-10 h-10 text-blue-600" />
         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
           <FaCheck className="w-3 h-3 text-white" />
@@ -78,7 +78,7 @@ export default function ConnectedAccountsPage() {
       </div>
 
       <div>
-        <h1 className="text-2xl font-semibold text-gray-900 mb-2">LinkedIn Connected</h1>
+        <h1 className="text-2xl font-medium text-gray-900 mb-2">LinkedIn Connected</h1>
         <p className="text-green-600 font-medium">Your account is successfully connected</p>
       </div>
 

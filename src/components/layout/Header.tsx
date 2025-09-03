@@ -159,11 +159,13 @@ export default function Header() {
         </div>
 
         {/* New Beam button */}
-        <Button variant="primary" size="md" className="px-8 py-3 rounded-[20px] min-w-[150px]"
-        onClick={() => router.push('/dashboard/discover')}>
+        <Link href="/beam-setup/linkedin-auto-connect/connected-accounts">
+        <Button variant="primary" size="md" className="px-8 py-3 rounded-[20px] min-w-[150px]">
           <FiPlus className='text-xl mr-3' />
           New Beam
         </Button>
+        </Link>
+        
 
         {/* Close dropdowns when clicking outside */}
         {(showUserDropdown || showNotifications) && (

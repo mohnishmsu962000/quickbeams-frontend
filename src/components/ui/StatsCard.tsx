@@ -23,7 +23,7 @@ export default function StatsCard({
       <div className="space-y-2">
         <p className="text-sm text-gray-600">{title}</p>
         <div className="flex items-center space-x-2">
-          <span className="text-3xl font-bold text-black">{percentage || value}</span>
+          <span className="text-3xl font-semibold text-black">{percentage || value}</span>
           {trendValue && (
             <span className={cn(
               "text-sm font-medium flex items-center",

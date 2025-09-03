@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import Button from './Button';
 import { FaLinkedin } from 'react-icons/fa';
 import Badge from './Badge';
+import Link from 'next/link';
 
 interface BeamTemplateCardProps {
   title: string;
@@ -64,15 +65,19 @@ export default function BeamTemplateCard({
         >
           Learn More
         </Button>
-        <Button 
-          variant="primary" 
-          size="sm" 
-          onClick={onInitiate}
-          className="flex-1"
-        >
-          Initiate
-        </Button>
-      </div>
+        <Link href="/beam-setup/linkedin-auto-connect/connected-accounts">
+          <Button 
+            variant="primary" 
+            size="sm" 
+            onClick={onInitiate}
+            className="flex-1"
+          >
+            Initiate
+          </Button>
+         </Link>
+
+        </div>
+      
     </div>
   );
 }
